@@ -29,9 +29,30 @@ void caridata(int cari);
 void hapus();
 void updatedata();
 
-int main(){
-  
+void buatqueue(){
+  queue.belakang= 0;
+}
+
+void hapus(){
+  int x;
+  int i;
+  cetakqueue();
+  cout<<"\nHapus No Antrian : ";
+  cin>>x;
+  for(i=x;i<queue.belakang;i++){
+    queue.element[i]=queue.element[i+1];
   }
+  queue.belakang--;
+  hapusdata();
+  updatedata();
+}
+
+void hapusdata(){
+  char file[50]="file.txt";
+  x=fopen("file.txt","w");
+  remove(file);
+  fclose(x);
+}
 
 void ambilfile(){
   queue.belakang=0;
@@ -92,4 +113,27 @@ void gantidata(int noganti){
       queue.elemen[i]=ganti;
       x=1;
     }
+}
+int main() {
+  int pilih,x,y,cari,noganti;
+  data in;
+  buatqueue();
+  do(){
+    cout<<"==========================================================\n";
+    cout<<"Final Project Struktur Data Kelompok 8\n";
+    cout<<"==========================================================\n";
+    cout<<"==========================================================\n";
+    cout<<"Anggota kelompok :\n";
+    cout<<"1. Churri Asna Fatchiyah (21081010156)\n";
+    cout<<"2. Chiristian K (21081010169)\n";
+    cout<<"3. Aura Choirun Nisa (21081010173)\n";
+    cout<<"4. Rena Rama Rosalinda (21081010190)\n";
+    cout<<"5. Najwa Laila Anggraini (21081010191)\n";
+    cout<<"6. Aqiilah Zayyaan Syihab (21081010239)\n";
+    cout<<"==========================================================\n\n";
+  cout<<"================Program Antrian Perpustakaan==================\nMenu :\n";
+  cout<<"1. Inputdata\n2. Hapus Data\n3. Cek Data\n4. Cari Data\n5. Update Data\n";
+  cout<<"Masukkan Pilihan : ";
+  cin>>pilih;
+  system("cls");
 }
