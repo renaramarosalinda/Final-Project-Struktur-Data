@@ -1,13 +1,50 @@
 #include <iostream>
+#include <malloc.h>
+#include <stdlib.h>
+FILE *x, *y;
+using namespace std;
 
+typedef struct {
+  char nama[50], 
+  char judul[100],
+  char no[20],
+  int nobook;
+}data;
 
-void enqueue (data ib);
-void dequeue ();
+typedef struct{
+  int belakang,
+  data elemen [100];
+}typequeue
+
+typequeue queue;
+
+void ambilfile();
+void enqueue(data ib);
+void dequeue();
 void gantidata (int noganti);
+void buatqueue();
+void hapusdata();
+void cetakqueue();
+void caridata(int cari);
+void hapus();
+void updatedata();
 
 int main(){
-}
+  
+  }
 
+void ambilfile(){
+  queue.belakang=0;
+  y=fopen("file.txt", "r");
+  int j=1;
+  while(!feof(y))
+    {
+      fread(&queue.elemen[j], sizeof(queue.elemen[j]), 1, y);
+      queue.belakang++;
+      j++;
+    }
+    fclose(y);
+}
 
 void enqueue(data ib){
   x=fopen("file.txt","a");
