@@ -53,6 +53,36 @@ void hapusdata(){
   fclose(x);
 }
 
+void cetakqueue(){
+  int j;
+  ambilfile();
+  for(j=1;j<queue.belakang;j++)
+    {
+      cout<<"\n\nAntrian ke : "<<j;
+      cout<<"\nNama Peminjam :"<<queue.elemen[j].nama;
+      cout<<"\nNo Buku :"<<queue.elemen[j].nobook;
+      cout<<"\nJudul Buku :"<<queue.elemen[j].judul;
+      cout<<"\nNo Telp :"<<queue.elemen[j].no;
+    }
+}
+
+void caridata(int cari){
+  bool y=0;
+  int i;
+  ambilfile();
+  for(i=1;i<=queue.belakang;i++)
+  {
+    if(queue.elemen[i].nobook==cari)
+    {
+      cout<<"\n\nAntrian ke : "<<i;
+      cout<<"\nNama Peminjam :"<<queue.elemen[i].nama;
+      cout<<"\nJudul Buku :"<<queue.elemen[i].judul;
+      cout<<"\nNo Telp :"<<queue.elemen[i].no;
+      y-1;
+      }
+    }
+}
+
 void enqueue(data ib){
   x=fopen("file.txt","a");
   fwrite(&ib,sizeof(ib),1,x);
