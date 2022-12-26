@@ -1,20 +1,21 @@
 #include <iostream>
 #include <malloc.h>
 #include <stdlib.h>
+
 FILE *x, *y;
 using namespace std;
 
 typedef struct {
-  char nama[50], 
-  char judul[100],
-  char no[20],
+  char nama[50];
+  char judul[100];
+  char no[20];
   int nobook;
 }data;
 
 typedef struct{
-  int belakang,
+  int belakang;
   data elemen [100];
-}typequeue
+}typequeue ;
 
 typequeue queue;
 
@@ -28,6 +29,19 @@ void cetakqueue();
 void caridata(int cari);
 void hapus();
 void updatedata();
+
+void ambilfile(){
+  queue.belakang=0;
+  y=fopen("file.txt", "r");
+  int j=1;
+  while(!feof(y))
+    {
+      fread(&queue.elemen[j], sizeof(queue.elemen[j]), 1, y);
+      queue.belakang++;
+      j++;
+    }
+    fclose(y);
+}
 
 void buatqueue(){
   queue.belakang= 0;
@@ -52,19 +66,6 @@ void hapusdata(){
   x=fopen("file.txt","w");
   remove(file);
   fclose(x);
-}
-
-void ambilfile(){
-  queue.belakang=0;
-  y=fopen("file.txt", "r");
-  int j=1;
-  while(!feof(y))
-    {
-      fread(&queue.elemen[j], sizeof(queue.elemen[j]), 1, y);
-      queue.belakang++;
-      j++;
-    }
-    fclose(y);
 }
 
 void enqueue(data ib){
