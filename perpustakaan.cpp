@@ -47,20 +47,6 @@ void buatqueue(){
   queue.belakang= 0;
 }
 
-void hapus(){
-  int x;
-  int i;
-  cetakqueue();
-  cout<<"\nHapus No Antrian : ";
-  cin>>x;
-  for(i=x;i<queue.belakang;i++){
-    queue.element[i]=queue.element[i+1];
-  }
-  queue.belakang--;
-  hapusdata();
-  updatedata();
-}
-
 void hapusdata(){
   char file[50]="file.txt";
   x=fopen("file.txt","w");
