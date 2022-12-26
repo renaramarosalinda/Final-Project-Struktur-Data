@@ -47,14 +47,16 @@ void buatqueue(){
   queue.belakang= 0;
 }
 
-void hapus(){
+void hapus()
+{
   int x;
   int i;
   cetakqueue();
-  cout<<"\nHapus No Antrian : ";
+  cout<<"\nHapus Nomor Antrian: ";
   cin>>x;
-  for(i=x;i<queue.belakang;i++){
-    queue.element[i]=queue.element[i+1];
+  for(i = x; i < queue.belakang; i++)
+  {
+    queue.elemen[i] = queue.elemen[i+1];
   }
   queue.belakang--;
   hapusdata();
@@ -115,6 +117,18 @@ void gantidata(int noganti){
       x=1;
     }
 }
+                
+void updatedata()
+{
+  int i;
+  x = fopen("file.txt","a");
+  for(i = 1; i<queue.belakang; i++)
+    {
+      fwrite(&queue.elemen[i], sizeof(queue.elemen[i]),1,x);
+    }
+  fclose(x);
+}
+                                        
 int main() {
   int pilih,x,y,cari,noganti;
   data in;
