@@ -136,4 +136,55 @@ int main() {
   cout<<"Masukkan Pilihan : ";
   cin>>pilih;
   system("cls");
+    if (pilih==1)
+    {
+      do
+      {
+        cout<<"Nama Peminjam :";
+        cin.ignore();
+        cin.getline(in.nama,50);
+        cout<<"No Buku : ";
+        cin>>in.nobook;
+        cout<<"Judul Buku : ";
+        cin.ignore();
+        cin.getline(in.judul,100);
+        cout<<"No telepon : ";
+        cin.getline(in.no,20);
+        enqueue(in);
+        cout<<"\n\nApakah ingin input lagi ? ";
+        cout<<"\n1. Ya\n2. Tidak\nMasukkah pilihan anda :";
+        cin>>y;
+        system("cls");
+      }while(y==1);
+  }
+  if(pilih==2)
+  {
+    cout<<"1. Hapus secara dequeue\n2. Hapus sesuai urutan\nPilih : ";
+    cin>>pilih;
+    if(pilih==1)
+      dequeue();
+    if(pilih==2)
+      hapus();
+  }
+  if(pilih==3)
+  {
+    cetakqueue();
+  }
+  if(pilih==4)
+  {
+    cout<<"Cari data dengan No buku : ";
+    cin>>cari;
+    caridata(cari);
+  }
+  if(pilih==5)
+  {
+    cout<<"Update data dengan No buku : ";
+    cin>>noganti;
+    gantidata(noganti);
+  }
+    cout<<"\n\nIngin kemali ke menu ? ";
+    cout<<"\n1. Ya\n2. Tidak\nMasukkan pilihan : ";
+    cin>>x;
+    system("cls");
+  }while(x==1); 
 }
