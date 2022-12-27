@@ -42,6 +42,7 @@ void ambilfile(){
     }
     fclose(y);
 }
+
 void buatqueue(){
   queue.belakang= 0;
 }
@@ -165,78 +166,26 @@ void updatedata()
   
 }
                       
-                    
 int main() {
   int pilih,x,y,cari,noganti;
   data in;
   buatqueue();
-  do(){
-    cout<<"==========================================================\n";
-    cout<<"Final Project Struktur Data Kelompok 8\n";
-    cout<<"==========================================================\n";
-    cout<<"==========================================================\n";
-    cout<<"Anggota kelompok :\n";
-    cout<<"1. Churri Asna Fatchiyah (21081010156)\n";
-    cout<<"2. Chiristian K (21081010169)\n";
-    cout<<"3. Aura Choirun Nisa (21081010173)\n";
-    cout<<"4. Rena Rama Rosalinda (21081010190)\n";
-    cout<<"5. Najwa Laila Anggraini (21081010191)\n";
-    cout<<"6. Aqiilah Zayyaan Syihab (21081010239)\n";
-    cout<<"==========================================================\n\n";
-  cout<<"================Program Antrian Perpustakaan==================\nMenu :\n";
-  cout<<"1. Inputdata\n2. Hapus Data\n3. Cek Data\n4. Cari Data\n5. Update Data\n";
-  cout<<"Masukkan Pilihan : ";
+  do{
+    cout<<"\t==========================================================\n";
+    cout<<"\t\tFinal Project Struktur Data Kelompok 8\n";
+    cout<<"\t==========================================================\n";
+    cout<<"\t==========================================================\n";
+    cout<<"\tAnggota kelompok :\n";
+    cout<<"\t1. Churri Asna Fatchiyah (21081010156)\n";
+    cout<<"\t2. Chiristian K (21081010169)\n";
+    cout<<"\t3. Aura Choirun Nisa (21081010173)\n";
+    cout<<"\t4. Rena Rama Rosalinda (21081010190)\n";
+    cout<<"\t5. Najwa Laila Anggraini (21081010191)\n";
+    cout<<"\t6. Aqiilah Zayyaan Syihab (21081010239)\n";
+    cout<<"\t==========================================================\n\n";
+  cout<<"\t==============Program Antrian Perpustakaan================\n\tMenu :\n";
+  cout<<"\t1. Inputdata\n\t2. Hapus Data\n\t3. Cek Data\n\t4. Cari Data\n\t5. Update Data\n";
+  cout<<"\tMasukkan Pilihan : ";
   cin>>pilih;
   system("cls");
-    if (pilih==1)
-    {
-      do
-      {
-        cout<<"Nama Peminjam :";
-        cin.ignore();
-        cin.getline(in.nama,50);
-        cout<<"No Buku : ";
-        cin>>in.nobook;
-        cout<<"Judul Buku : ";
-        cin.ignore();
-        cin.getline(in.judul,100);
-        cout<<"No telepon : ";
-        cin.getline(in.no,20);
-        enqueue(in);
-        cout<<"\n\nApakah ingin input lagi ? ";
-        cout<<"\n1. Ya\n2. Tidak\nMasukkah pilihan anda :";
-        cin>>y;
-        system("cls");
-      }while(y==1);
-  }
-  if(pilih==2)
-  {
-    cout<<"1. Hapus secara dequeue\n2. Hapus sesuai urutan\nPilih : ";
-    cin>>pilih;
-    if(pilih==1)
-      dequeue();
-    if(pilih==2)
-      hapus();
-  }
-  if(pilih==3)
-  {
-    cetakqueue();
-  }
-  if(pilih==4)
-  {
-    cout<<"Cari data dengan No buku : ";
-    cin>>cari;
-    caridata(cari);
-  }
-  if(pilih==5)
-  {
-    cout<<"Update data dengan No buku : ";
-    cin>>noganti;
-    gantidata(noganti);
-  }
-    cout<<"\n\nIngin kemali ke menu ? ";
-    cout<<"\n1. Ya\n2. Tidak\nMasukkan pilihan : ";
-    cin>>x;
-    system("cls");
-  }while(x==1); 
 }
